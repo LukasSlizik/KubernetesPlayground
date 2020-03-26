@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-hello-world-deployment2
+  labels:
+    app: nodejs-hello-world2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodejs-hello-world2
+  template:
+    metadata:
+      labels:
+        app: nodejs-hello-world2
+    spec:
+      containers:
+      - name: nodejs-hello-world2
+        image: my-apache2
+        ports:
+        - containerPort: 3000

@@ -14,5 +14,3 @@ spec:
         memory: "200Mi"
     ports:
     - containerPort: 3000
-
-# https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/

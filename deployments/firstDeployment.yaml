@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-hello-world-deployment
+  labels:
+    app: nodejs-hello-world
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodejs-hello-world
+  template:
+    metadata:
+      labels:
+        app: nodejs-hello-world
+    spec:
+      containers:
+      - name: nodejs-hello-world
+        image: heroku/nodejs-hello-world
+        ports:
+        - containerPort: 3000

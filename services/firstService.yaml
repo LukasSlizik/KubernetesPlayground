@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: first-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
-    run: first-pod
+    app: nodejs-hello-world1
   ports:
     - protocol: TCP
       nodePort: 32760
       port: 3000
       name: http
-      targetPort: 80
+      targetPort: 3000
