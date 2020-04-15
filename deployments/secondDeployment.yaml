@@ -3,19 +3,25 @@ kind: Deployment
 metadata:
   name: hello-world2-deployment
   labels:
-    app: hello-world2
+    app: hello-world
+    version: v2
+    environment: production
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
-      app: hello-world2
+      app: hello-world
+      version: v2
+      environment: production
   template:
     metadata:
       labels:
-        app: hello-world2
+        app: hello-world
+        version: v2
+        environment: production
     spec:
       containers:
       - name: hello-world2
         image: lukasslizik/hello-world2
         ports:
-        - containerPort: 3000
+        - containerPort: 8080

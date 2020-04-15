@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: first-pod
+  name: hello-world1
   labels:
-    run: first-pod
+    app: hello-world1
 spec:
   containers:
-  - name: nodejs-hello-world
-    image: heroku/nodejs-hello-world
+  - name: hello-world1
+    image: lukasslizik/hello-world1
     resources:
       limits:
         cpu: "1"
         memory: "200Mi"
     ports:
-    - containerPort: 3000
+    - containerPort: 8080
