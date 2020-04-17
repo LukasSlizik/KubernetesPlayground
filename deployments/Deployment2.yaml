@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-kubernetes-deployment-2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-kubernetes
+      environment: prod
+      version: "2"
+  template:
+    metadata:
+      labels:
+        app: hello-kubernetes
+        version: "2"
+        environment: prod
+    spec:
+      containers:
+      - name: hellokubernetes
+        image: lukasslizik/hellokubernetes:2.0
+        ports:
+        - containerPort: 8080

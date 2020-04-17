@@ -1,13 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hello-world1
+  name: hello-kubernetes
   labels:
-    app: hello-world1
+    app: hello-kubernetes
+    environment: prod
+    version: "1"
 spec:
   containers:
-  - name: hello-world1
-    image: lukasslizik/hello-world1
+  - name: hello-kubernetes
+    image: lukasslizik/hellokubernetes:1.0
     resources:
       limits:
         cpu: "1"
